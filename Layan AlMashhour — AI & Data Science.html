@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Layan AlMashhour — AI & Data Science</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4faf7;--surface:#fff;--ink:#0f2a44;--muted:#52667a;--green:#2f8f78;--mint:#dff2ea;--navy:#0f2a44;--line:#d6e6df;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b1d31;--surface:#12293f;--ink:#eaf5f0;--muted:#9bb3c4;--green:#5fcfb0;--mint:#173a3c;--navy:#07162a;--line:#21405a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1d31;--surface:#12293f;--ink:#eaf5f0;--muted:#9bb3c4;--green:#5fcfb0;--mint:#173a3c;--navy:#07162a;--line:#21405a;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0}
+a{color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:6px 18px;flex-wrap:wrap;justify-content:center;padding:12px 20px}
+nav a{text-decoration:none;font-size:14px;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--green)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.hero{text-align:center;padding:80px 0 56px;background:linear-gradient(180deg,var(--mint),var(--bg))}
+.stars{color:var(--green);letter-spacing:10px;font-size:14px}
+.eyebrow{margin:14px 0 6px;color:var(--muted);letter-spacing:3px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(40px,10vw,88px);line-height:1.05;font-weight:800;color:var(--ink)}
+h1 span{color:var(--green)}
+.btns{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 26px;border-radius:99px;text-decoration:none;font-weight:600;font-size:15px;background:var(--navy);color:#fff;border:1.5px solid var(--navy)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--green)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn{background:var(--green);color:#07162a;border-color:var(--green)}}
+.marq{overflow:hidden;background:var(--navy);color:#cfeee3;padding:12px 0;white-space:nowrap}
+.marq div{display:inline-block;animation:m 28s linear infinite}
+.marq span{margin:0 22px;font-size:14px}.marq i{color:#5fcfb0;font-style:normal}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding:64px 0}
+.label{color:var(--green);text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:600}
+h2{font-size:clamp(28px,5vw,42px);margin:6px 0 24px}
+h2::after{content:" ✦";color:var(--green);font-size:.6em}
+.about p{max-width:720px;color:var(--muted);font-size:17px;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chips span{padding:5px 14px;border-radius:99px;background:var(--mint);color:var(--ink);font-size:14px;border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:28px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center}
+.stat b{display:block;font-family:'Playfair Display',serif;font-size:30px;color:var(--green)}
+.stat small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:8px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--green)}
+.num{color:var(--green);font-weight:600;font-size:13px;letter-spacing:2px}
+.tag{font-size:11px;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase}
+.card h3{font-size:22px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.card a{margin-top:auto;padding-top:10px;color:var(--green);font-weight:600;text-decoration:none;font-size:14px}
+.tl{border-left:2px solid var(--line);padding-left:22px;margin-left:6px}
+.item{position:relative;margin-bottom:30px}
+.item::before{content:"";position:absolute;left:-30px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--green);border:3px solid var(--bg)}
+.date{font-size:13px;color:var(--green);font-weight:600}
+.item h3{font-size:21px;margin:2px 0}
+.org{color:var(--muted);font-size:15px}
+.item ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px}
+.box h3{font-size:20px;margin-bottom:12px}
+.box ul{margin:0;padding-left:18px;color:var(--muted);font-size:15px}
+footer{background:var(--navy);color:#eaf5f0;text-align:center;padding:64px 20px 48px}
+footer h2{color:#fff}footer h2::after{color:#5fcfb0}
+footer p{color:#b9d3dc;margin:0 0 24px}
+footer .btn{background:#5fcfb0;color:#07162a;border-color:#5fcfb0}
+footer .btn.alt{background:transparent;color:#fff;border-color:#5fcfb0}
+footer small{display:block;margin-top:32px;color:#8fa9bb}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#courses">Courses</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="stars">✦ ★ ✦ ★ ✦</div>
+  <p class="eyebrow">AI · Data Science · Software Engineering</p>
+  <h1>LAYAN<br><span>ALMASHHOUR</span></h1>
+  <div class="btns"><a class="btn" href="#projects">See my work ✦</a><a class="btn alt" href="#contact">Get in touch</a></div>
+</div></header>
+
+<div class="marq"><div>
+<span>Python <i>✦</i></span><span>Machine Learning <i>✦</i></span><span>Deep Learning <i>✦</i></span><span>Computer Vision <i>✦</i></span><span>Data Analytics <i>✦</i></span><span>Java <i>✦</i></span><span>RStudio <i>✦</i></span><span>UI Design <i>✦</i></span><span>NLP <i>✦</i></span>
+<span>Python <i>✦</i></span><span>Machine Learning <i>✦</i></span><span>Deep Learning <i>✦</i></span><span>Computer Vision <i>✦</i></span><span>Data Analytics <i>✦</i></span><span>Java <i>✦</i></span><span>RStudio <i>✦</i></span><span>UI Design <i>✦</i></span><span>NLP <i>✦</i></span>
+</div></div>
+
+<section id="about" class="about"><div class="wrap">
+  <div class="label">About me</div><h2>Hi, I’m Layan</h2>
+  <p>I’m a Computer Science graduate specializing in Artificial Intelligence, based in Abha, Saudi Arabia, with a first-class honors GPA of 4.90 / 5 from King Khalid University.</p>
+  <p>I’m passionate about AI and its development, with hands-on experience across its different areas: building machine learning and deep learning models, data-driven systems, and user-friendly interfaces. I also bring leadership, public speaking and event-planning experience from Saudi Aramco and several university clubs.</p>
+  <div class="chips"><span>Python</span><span>Machine Learning</span><span>Deep Learning</span><span>Data Analytics</span><span>UI Design</span><span>IT Support</span></div>
+  <div class="stats">
+    <div class="stat"><b>4.90</b><small>GPA out of 5</small></div>
+    <div class="stat"><b>3</b><small>AI projects</small></div>
+    <div class="stat"><b>15</b><small>Team members led</small></div>
+    <div class="stat"><b>8+</b><small>Events coordinated</small></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="label">Selected work</div><h2>Projects</h2>
+  <div class="grid">
+    <div class="card"><span class="num">01</span><span class="tag">Graduation Project · Deep Learning · Computer Vision</span><h3>Tafqad: AI-Powered Lost & Found</h3><p>A lost-and-found platform using deep learning and computer vision that improved item recognition accuracy by 80%+ and reduced retrieval time. Built on a real-time database for instant sync, with a modern, user-friendly UI/UX.</p><a href="https://github.com/LayanAlmashhourCodes" target="_blank" rel="noopener">View on GitHub →</a></div>
+    <div class="card"><span class="num">02</span><span class="tag">Deep Learning · Image Restoration</span><h3>Landscape Colorization</h3><p>A convolutional autoencoder that colorizes grayscale landscape images with high-quality reconstruction.</p><a href="https://github.com/LayanAlmashhourCodes" target="_blank" rel="noopener">View on GitHub →</a></div>
+    <div class="card"><span class="num">03</span><span class="tag">Track E · Customer Service · Speech · NLP · Medium</span><h3>CallSense: Arabic Call-Center Intelligence</h3><p>From a customer-service phone call to a searchable, prioritised supervisor dashboard.</p><a href="https://github.com/LayanAlmashhourCodes" target="_blank" rel="noopener">View on GitHub →</a></div>
+  </div>
+</div></section>
+
+<section id="experience" style="background:var(--mint)"><div class="wrap">
+  <div class="label">Journey</div><h2>Experience</h2>
+  <div class="tl">
+    <div class="item"><div class="date">Jan 2026 – May 2026</div><h3>IT & Administrative Support Intern</h3><div class="org">Saudi Aramco</div><ul><li>Delivered IT support and troubleshooting for 20+ desktop systems, resolving network connectivity issues.</li><li>Contributed to AI initiative planning, bridging technical requirements and practical implementation.</li><li>Designed visual materials and presentations for corporate communications.</li><li>Coordinated planning and execution for 8+ events.</li></ul></div>
+    <div class="item"><div class="date">Apr 2026</div><h3>Tech Trainer (Volunteer)</h3><div class="org">Google Developer Group · King Khalid University</div><ul><li>Taught students foundational technology and AI concepts through interactive, hands-on sessions.</li></ul></div>
+    <div class="item"><div class="date">Sep 2025 – Jan 2026</div><h3>Member (Volunteer)</h3><div class="org">Digital Tech Club · King Khalid University</div><ul><li>Assisted in technical problem-solving and managed data organization for digital technology events.</li></ul></div>
+    <div class="item"><div class="date">Aug 2024 – Jan 2025</div><h3>Leader, Content Writing Committee</h3><div class="org">Entrepreneurship Club · King Khalid University</div><ul><li>Led 15 members to produce 10+ professional publications, boosting club engagement and event visibility.</li><li>Worked with club leaders to plan and support all club activities.</li></ul></div>
+    <div class="item"><div class="date">2022 – 2026</div><h3>B.Sc. Computer Science, AI Track</h3><div class="org">King Khalid University · GPA 4.90 / 5 (First-Class Honors)</div></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <div class="label">Toolkit</div><h2>Skills</h2>
+  <div class="two">
+    <div class="box"><h3>Technical</h3><ul><li>Python, Java, RStudio</li><li>Machine Learning & Deep Learning</li><li>Data Analytics</li><li>UI Design</li><li>Microsoft Office Suite</li><li>Documentation & Reporting</li></ul></div>
+    <div class="box"><h3>Soft skills</h3><ul><li>Team Leadership & Collaboration</li><li>Public Speaking</li><li>Analytical Thinking</li><li>Problem Solving</li><li>Adaptability</li><li>Event Planning</li></ul></div>
+    <div class="box"><h3>Languages</h3><ul><li>Arabic: Native</li><li>English: Professional (STEP: 84)</li></ul></div>
+  </div>
+</div></section>
+
+<section id="courses" style="padding-top:0"><div class="wrap">
+  <div class="label">Credentials</div><h2>Courses</h2>
+  <div class="grid">
+    <div class="card"><span class="num">2026</span><h3>Data Analyst Track</h3><p>DataCamp</p></div>
+    <div class="card"><span class="num">2025</span><h3>Summer School for Artificial Intelligence</h3><p>Center of Artificial Intelligence at KKU</p></div>
+    <div class="card"><span class="num">2024</span><h3>Data Science Bootcamp</h3><p>Data Science Dojo</p></div>
+  </div>
+</div></section>
+
+<footer id="contact">
+  <div class="label" style="color:#5fcfb0">Get in touch</div><h2>Let’s Talk</h2>
+  <p>Open to opportunities in AI, data science and software engineering.</p>
+  <div class="btns"><a class="btn" href="mailto:Layanalmashhour@gmail.com">Email →</a><a class="btn alt" href="https://www.linkedin.com/in/layan-almashhour" target="_blank" rel="noopener">LinkedIn →</a><a class="btn alt" href="https://github.com/LayanAlmashhourCodes" target="_blank" rel="noopener">GitHub →</a></div>
+  <small>© 2026 Layan AlMashhour · Abha, Saudi Arabia</small>
+</footer>
+</body>
+</html>
